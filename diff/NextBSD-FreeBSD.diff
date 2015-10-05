@@ -1,7 +1,7 @@
-diff --git a/../NextBSD/bhyve/Makefile b/../FreeBSD/bhyve/Makefile
+diff --git a/../src/NextBSD/bhyve/Makefile b/../src/FreeBSD/bhyve/Makefile
 index be5cb33..0e1a85e 100644
---- a/../NextBSD/bhyve/Makefile
-+++ b/../FreeBSD/bhyve/Makefile
+--- a/../src/NextBSD/bhyve/Makefile
++++ b/../src/FreeBSD/bhyve/Makefile
 @@ -16,6 +16,7 @@ SRCS=	\
  	bootrom.c		\
  	consport.c		\
@@ -10,10 +10,10 @@ index be5cb33..0e1a85e 100644
  	inout.c			\
  	ioapic.c		\
  	mem.c			\
-diff --git a/../NextBSD/bhyve/acpi.c b/../FreeBSD/bhyve/acpi.c
+diff --git a/../src/NextBSD/bhyve/acpi.c b/../src/FreeBSD/bhyve/acpi.c
 index a9dd1cc..57fe783 100644
---- a/../NextBSD/bhyve/acpi.c
-+++ b/../FreeBSD/bhyve/acpi.c
+--- a/../src/NextBSD/bhyve/acpi.c
++++ b/../src/FreeBSD/bhyve/acpi.c
 @@ -790,10 +790,10 @@ basl_open(struct basl_fio *bf, int suffix)
  	err = 0;
  
@@ -27,10 +27,10 @@ index a9dd1cc..57fe783 100644
  		bf->fd = mkstemp(bf->f_name);
  	}
  
-diff --git a/../NextBSD/bhyve/bhyverun.c b/../FreeBSD/bhyve/bhyverun.c
+diff --git a/../src/NextBSD/bhyve/bhyverun.c b/../src/FreeBSD/bhyve/bhyverun.c
 index cfb3fe4..bc49c57 100644
---- a/../NextBSD/bhyve/bhyverun.c
-+++ b/../FreeBSD/bhyve/bhyverun.c
+--- a/../src/NextBSD/bhyve/bhyverun.c
++++ b/../src/FreeBSD/bhyve/bhyverun.c
 @@ -56,6 +56,7 @@ __FBSDID("$FreeBSD$");
  #include "acpi.h"
  #include "inout.h"
@@ -49,11 +49,11 @@ index cfb3fe4..bc49c57 100644
  	/*
  	 * Change the proc title to include the VM name.
  	 */
-diff --git a/../FreeBSD/bhyve/fwctl.c b/../FreeBSD/bhyve/fwctl.c
+diff --git a/../src/FreeBSD/bhyve/fwctl.c b/../src/FreeBSD/bhyve/fwctl.c
 new file mode 100644
 index 0000000..4b6164b
 --- /dev/null
-+++ b/../FreeBSD/bhyve/fwctl.c
++++ b/../src/FreeBSD/bhyve/fwctl.c
 @@ -0,0 +1,549 @@
 +/*-
 + * Copyright (c) 2015  Peter Grehan <grehan@freebsd.org>
@@ -604,11 +604,11 @@ index 0000000..4b6164b
 +
 +	be_state = IDENT_WAIT;
 +}
-diff --git a/../FreeBSD/bhyve/fwctl.h b/../FreeBSD/bhyve/fwctl.h
+diff --git a/../src/FreeBSD/bhyve/fwctl.h b/../src/FreeBSD/bhyve/fwctl.h
 new file mode 100644
 index 0000000..f5f8d13
 --- /dev/null
-+++ b/../FreeBSD/bhyve/fwctl.h
++++ b/../src/FreeBSD/bhyve/fwctl.h
 @@ -0,0 +1,54 @@
 +/*-
 + * Copyright (c) 2015  Peter Grehan <grehan@freebsd.org>
@@ -664,10 +664,10 @@ index 0000000..f5f8d13
 +void	fwctl_init(void);
 +
 +#endif /* _FWCTL_H_ */
-diff --git a/../NextBSD/bhyve/pci_virtio_net.c b/../FreeBSD/bhyve/pci_virtio_net.c
+diff --git a/../src/NextBSD/bhyve/pci_virtio_net.c b/../src/FreeBSD/bhyve/pci_virtio_net.c
 index 3781ea9..aa9b581 100644
---- a/../NextBSD/bhyve/pci_virtio_net.c
-+++ b/../FreeBSD/bhyve/pci_virtio_net.c
+--- a/../src/NextBSD/bhyve/pci_virtio_net.c
++++ b/../src/FreeBSD/bhyve/pci_virtio_net.c
 @@ -57,7 +57,7 @@ __FBSDID("$FreeBSD$");
  
  #define VTNET_RINGSZ	1024
